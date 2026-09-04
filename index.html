@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>市場指數漲跌幅</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #ffffff;
+    --ink: #1c2430;
+    --muted: #6b7280;
+    --navy: #1f3a5f;
+    --navy-soft: #edf1f7;
+    --rule: #e3e7ec;
+    --rule-strong: #b8c2cf;
+    --up: #c8232c;    /* 台灣慣例：紅漲 */
+    --down: #1e7f4f;  /* 台灣慣例：綠跌 */
+  }
+  html[data-convention="intl"] { --up: #1e7f4f; --down: #c8232c; }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "IBM Plex Sans", "Noto Sans TC", system-ui, sans-serif;
+    font-size: 14px; line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 880px; margin: 0 auto; padding: 40px 24px 64px; }
+
+  header { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px;
+           border-bottom: 2px solid var(--navy); padding-bottom: 10px; margin-bottom: 4px; }
+  h1 { font-family: "Noto Sans TC", sans-serif; font-weight: 700; font-size: 22px; margin: 0; letter-spacing: .02em; }
+  h1 span { color: var(--muted); font-weight: 400; font-size: 13px; margin-left: 12px; }
+  .meta { color: var(--muted); font-size: 12px; text-align: right; white-space: nowrap; }
+  .meta button {
+    margin-top: 4px; font: inherit; font-size: 12px; color: var(--navy);
+    background: none; border: 1px solid var(--rule-strong); border-radius: 3px;
+    padding: 2px 8px; cursor: pointer;
+  }
+  .meta button:hover, .meta button:focus-visible { background: var(--navy-soft); outline: none; }
+
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; margin-top: 18px; }
+  thead th {
+    text-align: right; font-weight: 600; font-size: 12px; color: var(--navy);
+    padding: 8px 10px; border-bottom: 1px solid var(--rule-strong);
+  }
+  thead th:first-child { text-align: left; }
+  tbody tr.group td {
+    font-family: "Noto Sans TC", sans-serif; font-weight: 700; color: var(--navy);
+    background: var(--navy-soft); padding: 7px 10px;
+  }
+  tbody tr.group td span { font-weight: 400; color: var(--muted); font-size: 12px; margin-left: 8px; }
+  tbody td { padding: 7px 10px; border-bottom: 1px solid var(--rule); text-align: right; white-space: nowrap; }
+  tbody td.name { text-align: left; }
+  tbody td.name small { display: block; color: var(--muted); font-size: 11px; line-height: 1.3; white-space: normal; }
+  td.up { color: var(--up); font-weight: 600; }
+  td.down { color: var(--down); font-weight: 600; }
+  td.na { color: var(--muted); }
+  tbody tr:hover td { background: #fafbfc; }
+
+  .foot { margin-top: 24px; color: var(--muted); font-size: 12px; }
+  .foot p { margin: 4px 0; }
+  .warn { margin-top: 16px; padding: 10px 12px; border: 1px solid #f0c36d; background: #fff8e6; border-radius: 3px; font-size: 13px; }
+
+  @media (max-width: 560px) {
+    .page { padding: 24px 12px 48px; }
+    header { flex-direction: column; align-items: flex-start; }
+    .meta { text-align: left; }
+    thead th, tbody td { padding: 6px 6px; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>市場指數漲跌幅<span>Yahoo Finance · 昨日收盤</span></h1>
+    <div class="meta">
+      <div id="updated">載入中…</div>
+      <button id="toggle" type="button">切換為國際慣例（綠漲紅跌）</button>
+    </div>
+  </header>
+
+  <table id="tbl" aria-live="polite">
+    <thead>
+      <tr>
+        <th>指數</th>
+        <th>收盤價</th>
+        <th>收盤日</th>
+        <th>5 日報酬</th>
+        <th>1 個月報酬</th>
+        <th>YTD 報酬</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div id="warn" class="warn" hidden></div>
+
+  <div class="foot">
+    <p>各指數以其自身交易日計算：5 日報酬 = 最近收盤 ÷ 5 個交易日前收盤 − 1；1 個月報酬以一個月前同日（或之前最近交易日）為基期；YTD 以去年最後一個交易日為基期。</p>
+    <p>資料每日由 GitHub Actions 自動更新一次，來源為 Yahoo Finance（透過 yfinance）。MSCI 指數與部分無法取得的指數以 ETF 或近似指數代替，替代標的註記於指數名稱下方。</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  const fmtNum = n => n == null ? '—' : n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const fmtPct = n => n == null ? '—' : (n > 0 ? '+' : n < 0 ? '−' : '') + Math.abs(n).toFixed(2) + '%';
+  const cls = n => n == null ? 'na' : n > 0 ? 'up' : n < 0 ? 'down' : '';
+
+  // 紅漲綠跌 / 綠漲紅跌 切換（記在網址 #intl，方便分享）
+  const html = document.documentElement, btn = document.getElementById('toggle');
+  const apply = intl => {
+    html.dataset.convention = intl ? 'intl' : 'tw';
+    btn.textContent = intl ? '切換為台灣慣例（紅漲綠跌）' : '切換為國際慣例（綠漲紅跌）';
+  };
+  apply(location.hash === '#intl');
+  btn.addEventListener('click', () => {
+    const intl = html.dataset.convention !== 'intl';
+    history.replaceState(null, '', intl ? '#intl' : location.pathname);
+    apply(intl);
+  });
+
+  function render(data) {
+    const tb = document.querySelector('#tbl tbody');
+    tb.innerHTML = '';
+    for (const g of data.groups) {
+      const tr = document.createElement('tr'); tr.className = 'group';
+      tr.innerHTML = `<td colspan="6">${g.name}<span>依 5 日報酬排序</span></td>`;
+      tb.appendChild(tr);
+      for (const r of g.rows) {
+        const row = document.createElement('tr');
+        row.innerHTML =
+          `<td class="name">${r.name}${r.note ? `<small>${r.note}</small>` : ''}</td>` +
+          `<td class="${r.close == null ? 'na' : ''}">${fmtNum(r.close)}</td>` +
+          `<td class="na">${r.date ? r.date.slice(5).replace('-', '/') : '—'}</td>` +
+          `<td class="${cls(r.r5d)}">${fmtPct(r.r5d)}</td>` +
+          `<td class="${cls(r.r1m)}">${fmtPct(r.r1m)}</td>` +
+          `<td class="${cls(r.rytd)}">${fmtPct(r.rytd)}</td>`;
+        tb.appendChild(row);
+      }
+    }
+    const t = new Date(data.updated_at);
+    document.getElementById('updated').textContent =
+      '更新時間 ' + t.toLocaleString('zh-TW', { timeZone: 'Asia/Taipei', hour12: false }) + '（台北）';
+    const w = document.getElementById('warn');
+    if (data.failed && data.failed.length) {
+      w.hidden = false;
+      w.textContent = '以下代號本次未取得資料：' + data.failed.join('、') + '。請檢查 fetch_data.py 內的 Yahoo Finance 代號。';
+    } else w.hidden = true;
+  }
+
+  fetch('data.json?v=' + Date.now())
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(render)
+    .catch(e => {
+      document.getElementById('updated').textContent = '無法讀取 data.json';
+      const w = document.getElementById('warn'); w.hidden = false;
+      w.textContent = '找不到 data.json 或無法從本機檔案讀取。請先執行 python fetch_data.py 產生資料，並透過 GitHub Pages / Netlify 或本機 http 伺服器（python -m http.server）開啟本頁。';
+    });
+})();
+</script>
+</body>
+</html>
