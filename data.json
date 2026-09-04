@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-04T11:00:04+00:00",
+  "updated_at": "2026-09-04T11:02:46+00:00",
   "source": "Yahoo Finance (yfinance)",
   "groups": [
     {
@@ -111,17 +111,6 @@
         },
         {
           "group": "亞洲市場",
-          "name": "菲律賓 PSEi",
-          "ticker": "PSEI.PS",
-          "note": "",
-          "close": 6404.11,
-          "date": "2026-07-17",
-          "r5d": 1.87,
-          "r1m": 4.73,
-          "rytd": 5.8
-        },
-        {
-          "group": "亞洲市場",
           "name": "新加坡 STI",
           "ticker": "^STI",
           "note": "",
@@ -174,6 +163,17 @@
           "r5d": -0.37,
           "r1m": 3.48,
           "rytd": -0.67
+        },
+        {
+          "group": "亞洲市場",
+          "name": "中國 滬深 300",
+          "ticker": "510300.SS",
+          "note": "以華泰柏瑞滬深300 ETF (510300.SS) 代替",
+          "close": 4.62,
+          "date": "2026-09-02",
+          "r5d": -0.69,
+          "r1m": -0.71,
+          "rytd": -2.8
         },
         {
           "group": "亞洲市場",
@@ -254,8 +254,8 @@
         },
         {
           "group": "亞洲市場",
-          "name": "中國 滬深 300",
-          "ticker": "399300.SZ",
+          "name": "菲律賓 PSEi",
+          "ticker": "PSEI.PS",
           "note": "",
           "close": null,
           "date": null,
@@ -267,6 +267,6 @@
     }
   ],
   "failed": [
-    "399300.SZ"
+    "PSEI.PS"
   ]
 }
