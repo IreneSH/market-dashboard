@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-04T10:54:24+00:00",
+  "updated_at": "2026-09-04T11:00:04+00:00",
   "source": "Yahoo Finance (yfinance)",
   "groups": [
     {
@@ -111,6 +111,17 @@
         },
         {
           "group": "亞洲市場",
+          "name": "菲律賓 PSEi",
+          "ticker": "PSEI.PS",
+          "note": "",
+          "close": 6404.11,
+          "date": "2026-07-17",
+          "r5d": 1.87,
+          "r1m": 4.73,
+          "rytd": 5.8
+        },
+        {
+          "group": "亞洲市場",
           "name": "新加坡 STI",
           "ticker": "^STI",
           "note": "",
@@ -163,6 +174,17 @@
           "r5d": -0.37,
           "r1m": 3.48,
           "rytd": -0.67
+        },
+        {
+          "group": "亞洲市場",
+          "name": "泰國 SET",
+          "ticker": "THD",
+          "note": "以 iShares MSCI Thailand ETF (THD, 美元計價) 代替",
+          "close": 73.14,
+          "date": "2026-09-03",
+          "r5d": -0.8,
+          "r1m": 0.26,
+          "rytd": 22.57
         },
         {
           "group": "亞洲市場",
@@ -232,30 +254,8 @@
         },
         {
           "group": "亞洲市場",
-          "name": "菲律賓 PSEi",
-          "ticker": "PSEI.PS",
-          "note": "",
-          "close": null,
-          "date": null,
-          "r5d": null,
-          "r1m": null,
-          "rytd": null
-        },
-        {
-          "group": "亞洲市場",
-          "name": "泰國 SET",
-          "ticker": "^SET.BK",
-          "note": "",
-          "close": null,
-          "date": null,
-          "r5d": null,
-          "r1m": null,
-          "rytd": null
-        },
-        {
-          "group": "亞洲市場",
           "name": "中國 滬深 300",
-          "ticker": "000300.SS",
+          "ticker": "399300.SZ",
           "note": "",
           "close": null,
           "date": null,
@@ -267,8 +267,6 @@
     }
   ],
   "failed": [
-    "PSEI.PS",
-    "^SET.BK",
-    "000300.SS"
+    "399300.SZ"
   ]
 }
