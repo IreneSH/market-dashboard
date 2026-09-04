@@ -44,7 +44,7 @@ INDEXES = [
     {"group": "亞洲市場", "name": "菲律賓 PSEi",        "ticker": "PSEI.PS",    "note": ""},
     {"group": "亞洲市場", "name": "泰國 SET", "ticker": "THD", "note": "以 iShares MSCI Thailand ETF (THD, 美元計價) 代替"},
     {"group": "亞洲市場", "name": "台灣 加權指數 TAIEX", "ticker": "^TWII",      "note": ""},
-    {"group": "亞洲市場", "name": "中國 滬深 300",       "ticker": "399300.SZ",  "note": ""},
+    {"group": "亞洲市場", "name": "中國 滬深 300", "ticker": "510300.SS", "note": "以華泰柏瑞滬深300 ETF (510300.SS) 代替"},
     {"group": "亞洲市場", "name": "韓國 KOSPI",         "ticker": "^KS11",      "note": ""},
 ]
 
