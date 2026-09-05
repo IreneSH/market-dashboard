@@ -70,8 +70,8 @@ def compute(ticker: str, hist: pd.DataFrame):
     if s.empty:
         return None
     # 只取「昨日以前」已完成的交易日，避免抓到盤中價
-    today_utc = datetime.now(timezone.utc).date()
-    s = s[s.index.date < today_utc]
+    today_taipei = datetime.now(timezone(timedelta(hours=8))).date()
+    s = s[s.index.date < today_taipei]
     if s.empty:
         return None
 
