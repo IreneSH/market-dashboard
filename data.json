@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-05T11:54:25+00:00",
+  "updated_at": "2026-09-07T22:37:32+00:00",
   "source": "Yahoo Finance (yfinance)",
   "groups": [
     {
@@ -62,6 +62,17 @@
         },
         {
           "group": "成熟市場",
+          "name": "日本 TOPIX",
+          "ticker": "1306.T",
+          "note": "以 NEXT FUNDS TOPIX ETF (1306.T) 代替",
+          "close": 430.1,
+          "date": "2026-09-07",
+          "r5d": -0.78,
+          "r1m": 1.18,
+          "rytd": 20.17
+        },
+        {
+          "group": "成熟市場",
           "name": "歐洲 STOXX 600",
           "ticker": "^STOXX",
           "note": "",
@@ -70,17 +81,6 @@
           "r5d": -0.81,
           "r1m": -1.06,
           "rytd": 9.63
-        },
-        {
-          "group": "成熟市場",
-          "name": "日本 TOPIX",
-          "ticker": "1306.T",
-          "note": "以 NEXT FUNDS TOPIX ETF (1306.T) 代替",
-          "close": 427.5,
-          "date": "2026-09-04",
-          "r5d": -1.04,
-          "r1m": 3.66,
-          "rytd": 19.45
         },
         {
           "group": "成熟市場",
@@ -236,10 +236,10 @@
           "ticker": "510300.SS",
           "note": "以華泰柏瑞滬深300 ETF (510300.SS) 代替",
           "close": 4.62,
-          "date": "2026-09-03",
-          "r5d": -1.49,
-          "r1m": 0.48,
-          "rytd": -2.78
+          "date": "2026-09-04",
+          "r5d": -1.35,
+          "r1m": -0.75,
+          "rytd": -2.88
         },
         {
           "group": "亞洲市場",
