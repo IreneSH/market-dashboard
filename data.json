@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T22:43:02+00:00",
+  "updated_at": "2026-10-12T22:43:24+00:00",
   "source": "Yahoo Finance (yfinance)",
   "groups": [
     {
@@ -7,36 +7,25 @@
       "rows": [
         {
           "group": "成熟市場",
-          "name": "美國 S&P 500",
-          "ticker": "^GSPC",
-          "note": "",
-          "close": 7811.54,
-          "date": "2026-10-09",
-          "r5d": 1.15,
-          "r1m": 2.29,
-          "rytd": 14.11
-        },
-        {
-          "group": "成熟市場",
           "name": "美國 道瓊工業",
           "ticker": "^DJI",
           "note": "",
-          "close": 51654.95,
-          "date": "2026-10-09",
-          "r5d": 0.93,
-          "r1m": -1.39,
-          "rytd": 7.47
+          "close": 51850.55,
+          "date": "2026-10-12",
+          "r5d": 1.14,
+          "r1m": -1.37,
+          "rytd": 7.88
         },
         {
           "group": "成熟市場",
-          "name": "MSCI 發達市場",
-          "ticker": "URTH",
-          "note": "以 iShares MSCI World ETF (URTH) 代替",
-          "close": 209.14,
+          "name": "日本 日經 225",
+          "ticker": "^N225",
+          "note": "",
+          "close": 69030.92,
           "date": "2026-10-09",
-          "r5d": 0.78,
-          "r1m": 0.81,
-          "rytd": 12.58
+          "r5d": 1.06,
+          "r1m": 5.97,
+          "rytd": 37.13
         },
         {
           "group": "成熟市場",
@@ -51,47 +40,58 @@
         },
         {
           "group": "成熟市場",
-          "name": "美國 Nasdaq 100",
-          "ticker": "^NDX",
+          "name": "美國 S&P 500",
+          "ticker": "^GSPC",
           "note": "",
-          "close": 30883.15,
-          "date": "2026-10-09",
-          "r5d": 0.24,
-          "r1m": 4.97,
-          "rytd": 22.31
+          "close": 7807.24,
+          "date": "2026-10-12",
+          "r5d": 0.43,
+          "r1m": 1.96,
+          "rytd": 14.05
         },
         {
           "group": "成熟市場",
-          "name": "日本 日經 225",
-          "ticker": "^N225",
-          "note": "",
-          "close": 69042.11,
-          "date": "2026-10-08",
-          "r5d": 0.12,
-          "r1m": 5.78,
-          "rytd": 37.15
+          "name": "MSCI 發達市場",
+          "ticker": "URTH",
+          "note": "以 iShares MSCI World ETF (URTH) 代替",
+          "close": 208.93,
+          "date": "2026-10-12",
+          "r5d": 0.18,
+          "r1m": 0.6,
+          "rytd": 12.47
         },
         {
           "group": "成熟市場",
           "name": "歐洲 STOXX 600",
           "ticker": "^STOXX",
           "note": "",
-          "close": 625.51,
-          "date": "2026-10-08",
-          "r5d": -0.18,
-          "r1m": -3.71,
-          "rytd": 5.52
+          "close": 631.55,
+          "date": "2026-10-09",
+          "r5d": 0.03,
+          "r1m": -1.38,
+          "rytd": 6.54
+        },
+        {
+          "group": "成熟市場",
+          "name": "美國 Nasdaq 100",
+          "ticker": "^NDX",
+          "note": "",
+          "close": 30664.7,
+          "date": "2026-10-12",
+          "r5d": -1.32,
+          "r1m": 4.41,
+          "rytd": 21.45
         },
         {
           "group": "成熟市場",
           "name": "美國 費城半導體",
           "ticker": "^SOX",
           "note": "",
-          "close": 12572.42,
-          "date": "2026-10-09",
-          "r5d": -4.3,
-          "r1m": 5.37,
-          "rytd": 77.5
+          "close": 12236.79,
+          "date": "2026-10-12",
+          "r5d": -7.11,
+          "r1m": 3.49,
+          "rytd": 72.76
         }
       ]
     },
@@ -114,88 +114,110 @@
           "name": "澳洲 ASX 200",
           "ticker": "^AXJO",
           "note": "",
-          "close": 8716.6,
+          "close": 8783.2,
+          "date": "2026-10-12",
+          "r5d": 1.11,
+          "r1m": 0.48,
+          "rytd": 0.79
+        },
+        {
+          "group": "亞洲市場",
+          "name": "香港 恒生指數",
+          "ticker": "^HSI",
+          "note": "",
+          "close": 24211.35,
           "date": "2026-10-09",
-          "r5d": 0.4,
-          "r1m": -2.19,
-          "rytd": 0.03
+          "r5d": 1.0,
+          "r1m": -4.21,
+          "rytd": -5.54
         },
         {
           "group": "亞洲市場",
           "name": "印尼 JCI",
           "ticker": "^JKSE",
           "note": "",
-          "close": 6031.28,
-          "date": "2026-10-08",
-          "r5d": 0.36,
-          "r1m": -9.8,
-          "rytd": -30.25
-        },
-        {
-          "group": "亞洲市場",
-          "name": "越南 VN-Index",
-          "ticker": "VNM",
-          "note": "以 VanEck Vietnam ETF (VNM, 美元計價) 代替",
-          "close": 16.72,
+          "close": 6093.76,
           "date": "2026-10-09",
-          "r5d": 0.0,
-          "r1m": -6.33,
-          "rytd": -12.37
-        },
-        {
-          "group": "亞洲市場",
-          "name": "泰國 SET",
-          "ticker": "THD",
-          "note": "以 iShares MSCI Thailand ETF (THD, 美元計價) 代替",
-          "close": 71.61,
-          "date": "2026-10-09",
-          "r5d": -0.01,
-          "r1m": -4.3,
-          "rytd": 20.01
+          "r5d": 0.94,
+          "r1m": -8.75,
+          "rytd": -29.53
         },
         {
           "group": "亞洲市場",
           "name": "印度 Nifty 50",
           "ticker": "^NSEI",
           "note": "",
-          "close": 22231.8,
-          "date": "2026-10-08",
-          "r5d": -1.72,
-          "r1m": -5.94,
-          "rytd": -14.92
-        },
-        {
-          "group": "亞洲市場",
-          "name": "馬來西亞 KLCI",
-          "ticker": "^KLSE",
-          "note": "",
-          "close": 1601.01,
-          "date": "2026-10-08",
-          "r5d": -1.8,
-          "r1m": -6.61,
-          "rytd": -4.71
+          "close": 22520.45,
+          "date": "2026-10-09",
+          "r5d": 0.44,
+          "r1m": -3.89,
+          "rytd": -13.81
         },
         {
           "group": "亞洲市場",
           "name": "印度 BSE 500",
           "ticker": "BSE-500.BO",
           "note": "代替 Nifty MidSmall 400",
-          "close": 33834.8,
-          "date": "2026-10-08",
-          "r5d": -2.11,
-          "r1m": -6.39,
-          "rytd": -9.64
+          "close": 34192.47,
+          "date": "2026-10-09",
+          "r5d": -0.08,
+          "r1m": -4.81,
+          "rytd": -8.68
         },
         {
           "group": "亞洲市場",
-          "name": "MSCI 亞洲（日本除外）",
-          "ticker": "AAXJ",
-          "note": "以 iShares MSCI All Country Asia ex Japan ETF (AAXJ) 代替",
-          "close": 115.54,
+          "name": "泰國 SET",
+          "ticker": "THD",
+          "note": "以 iShares MSCI Thailand ETF (THD, 美元計價) 代替",
+          "close": 71.36,
+          "date": "2026-10-12",
+          "r5d": -0.17,
+          "r1m": -3.71,
+          "rytd": 19.59
+        },
+        {
+          "group": "亞洲市場",
+          "name": "馬來西亞 KLCI",
+          "ticker": "^KLSE",
+          "note": "",
+          "close": 1608.45,
           "date": "2026-10-09",
-          "r5d": -2.25,
-          "r1m": -2.89,
-          "rytd": 24.08
+          "r5d": -1.37,
+          "r1m": -6.18,
+          "rytd": -4.27
+        },
+        {
+          "group": "亞洲市場",
+          "name": "越南 VN-Index",
+          "ticker": "VNM",
+          "note": "以 VanEck Vietnam ETF (VNM, 美元計價) 代替",
+          "close": 16.58,
+          "date": "2026-10-12",
+          "r5d": -1.89,
+          "r1m": -5.26,
+          "rytd": -13.1
+        },
+        {
+          "group": "亞洲市場",
+          "name": "中國 上証綜指",
+          "ticker": "000001.SS",
+          "note": "",
+          "close": 3813.79,
+          "date": "2026-10-09",
+          "r5d": -1.92,
+          "r1m": -3.49,
+          "rytd": -3.91
+        },
+        {
+          "group": "亞洲市場",
+          "name": "中國 滬深 300",
+          "ticker": "510300.SS",
+          "note": "以華泰柏瑞滬深300 ETF (510300.SS) 代替",
+          "close": 4.39,
+          "date": "2026-10-09",
+          "r5d": -2.88,
+          "r1m": -5.43,
+          "rytd": -7.74
         },
         {
           "group": "亞洲市場",
@@ -210,55 +232,33 @@
         },
         {
           "group": "亞洲市場",
-          "name": "中國 上証綜指",
-          "ticker": "000001.SS",
-          "note": "",
-          "close": 3811.9,
-          "date": "2026-10-08",
-          "r5d": -3.17,
-          "r1m": -3.26,
-          "rytd": -3.95
-        },
-        {
-          "group": "亞洲市場",
-          "name": "香港 恒生指數",
-          "ticker": "^HSI",
-          "note": "",
-          "close": 23785.79,
-          "date": "2026-10-08",
-          "r5d": -3.36,
-          "r1m": -6.05,
-          "rytd": -7.2
-        },
-        {
-          "group": "亞洲市場",
-          "name": "中國 滬深 300",
-          "ticker": "510300.SS",
-          "note": "以華泰柏瑞滬深300 ETF (510300.SS) 代替",
-          "close": 4.39,
-          "date": "2026-10-08",
-          "r5d": -4.38,
-          "r1m": -5.08,
-          "rytd": -7.66
-        },
-        {
-          "group": "亞洲市場",
           "name": "新加坡 STI",
           "ticker": "^STI",
           "note": "",
-          "close": 5412.96,
-          "date": "2026-10-08",
-          "r5d": -4.49,
-          "r1m": -6.15,
-          "rytd": 16.5
+          "close": 5401.89,
+          "date": "2026-10-09",
+          "r5d": -4.13,
+          "r1m": -5.72,
+          "rytd": 16.26
+        },
+        {
+          "group": "亞洲市場",
+          "name": "MSCI 亞洲（日本除外）",
+          "ticker": "AAXJ",
+          "note": "以 iShares MSCI All Country Asia ex Japan ETF (AAXJ) 代替",
+          "close": 114.37,
+          "date": "2026-10-12",
+          "r5d": -4.28,
+          "r1m": -2.79,
+          "rytd": 22.82
         },
         {
           "group": "亞洲市場",
           "name": "菲律賓 PSEi",
           "ticker": "PSEI.PS",
           "note": "",
-          "close": 5700.99,
-          "date": "2026-10-09",
+          "close": 5743.18,
+          "date": "2026-10-12",
           "r5d": null,
           "r1m": null,
           "rytd": null
